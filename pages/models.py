@@ -6,4 +6,8 @@ from django.contrib.auth.models import User
 
 class Account(models.Model):
 	user = models.OneToOneField(User, on_delete=models.CASCADE)
-	balance = models.IntegerField()
+
+class Poem(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    title = models.TextField()
+    content = models.TextField()

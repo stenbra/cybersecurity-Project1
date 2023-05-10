@@ -77,6 +77,9 @@ INSERT INTO auth_user VALUES(1,'pbkdf2_sha256$180000$S4MvstQ5t2rx$sRNX547ndLQrKJ
 INSERT INTO auth_user VALUES(2,'pbkdf2_sha256$180000$Kh1Dq2UDGO17$mzsX0Mp2mTYuMXkfrzUCCj3xZDjWOAdblmH0sDo+DIQ=','2020-07-17 22:17:40.896304',0,'bob','','',0,1,'2020-07-17 20:01:47.462580','');
 INSERT INTO auth_user VALUES(3,'pbkdf2_sha256$180000$o2Gh6IdeOjRM$4x7sNu5bLQB+HGpYZVuZBjg7yAKJjz5TPkFx0yWBhwc=','2020-07-19 17:36:58.865183',0,'alice','','',0,1,'2020-07-17 20:02:37.168116','');
 INSERT INTO auth_user VALUES(4,'pbkdf2_sha256$180000$M1zqxGvWIReQ$AAFi7gwlp0CH/t8Jd8aiZ1V6XmGXT4639F50RH6EX3c=',NULL,0,'patrick','','',0,1,'2020-07-17 20:06:58.848246','');
+
+CREATE TABLE IF NOT EXISTS "pages_poem" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "content" text(200) NOT NULL,"content" text(1000) NOT NULL);
+
 DELETE FROM sqlite_sequence;
 INSERT INTO sqlite_sequence VALUES('django_migrations',19);
 INSERT INTO sqlite_sequence VALUES('django_admin_log',3);
