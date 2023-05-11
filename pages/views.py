@@ -1,19 +1,24 @@
-from django.http import JsonResponse
+from django.http import JsonResponse,HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from .models import Account,Poem
 
 
 @login_required
+@csrf_exempt
 def homePageView(request):
-	poems = Poem.objects.filter(
-        user=request.user,
-    )
-
-	return render(request, 'pages/index.html', {'poems': poems})
+    injection=request.GET.get("query", "")
+    query = f"SELECT id, title FROM pages_poem WHERE user_id = {request.user.id} AND title LIKE '%{injection}%'"
+    poems = Poem.objects.raw(query)
+	# poems = Poem.objects.filter(
+    #     user=request.user,
+    # )
+    return render(request, 'pages/index.html', {'poems': poems})
 
 @login_required
+@csrf_exempt
 def poemAddView(request):
     if request.method == "POST":
         poem = Poem(
