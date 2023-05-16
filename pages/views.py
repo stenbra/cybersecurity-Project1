@@ -48,11 +48,11 @@ def poemDetailView(request, poem_id):
 @login_required
 def poemDeleteView(request, poem_id):
     #FLAW - Broken access controll
-    poem = Poem.objects.get(pk=poem_id)
-    poem.delete()
     #Fix: make sure that it is the right user
     # if poem.user != request.user: 
     # 	return HttpResponseForbidden() 
+    poem = Poem.objects.get(pk=poem_id)
+    poem.delete()
     return redirect("/")
 
 
