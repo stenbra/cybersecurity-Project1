@@ -24,6 +24,9 @@
             
             <h2>Write a poem</h2>
             <form action="poems" method="POST">
+                <!--FLAW - Cross Site Request Forgery 
+                    Fix: uncomment the csrf token below
+                -->
                 <!--{% csrf_token %}-->
                 <label for="title">Title</label>
                 <br>

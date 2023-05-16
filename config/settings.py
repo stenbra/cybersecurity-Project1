@@ -51,7 +51,11 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'config.urls'
+#FLAW - #FLAW - Broken Authentication
 SESSION_ENGINE = 'config.simplesession'
+#Fix: Remove the line of code avobe, since django will then use the default session engine
+#Also make cookies not accessible using JavaScript
+#SESSION_COOKIE_HTTPONLY = True 
 
 
 TEMPLATES = [

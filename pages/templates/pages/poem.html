@@ -11,6 +11,9 @@
         <a href="/">Back to all you poems</a>
         <h1 style="text-align: center;">{{ poem.title }}</h1>
         <a href="/poems/{{poem.id}}/delete" role="button" class="secondary">Delete</a>
+        <!--FLAW - Cross Site Scripting 
+            Fix: remove the "|safe" from the line below to make django use Automatic HTML escaping
+        -->
         <p style="background-color: aliceblue;margin: 10px;text-align: center;">{{ poem.content|safe  }}</p>
         {% endblock %}
         </div>

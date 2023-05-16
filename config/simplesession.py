@@ -1,5 +1,5 @@
 import django.contrib.sessions.backends.db as db
-
+#FLAW - Broken Authentication: since the sessions are predictable
 class SessionStore(db.SessionStore):
 	session_counter = 0
 
