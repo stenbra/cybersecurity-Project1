@@ -6,12 +6,14 @@
 
 
     <body>
+        <div style="margin-left: 30em;width: 800px;background-color: beige; padding: 5px;">
         {% block content %}
         <a href="/">Back to all you poems</a>
-        <h1>{{ poem.title }}</h1>
-        <p>{{ poem.content|safe  }}</p>
+        <h1 style="text-align: center;">{{ poem.title }}</h1>
         <a href="/poems/{{poem.id}}/delete" role="button" class="secondary">Delete</a>
+        <p style="background-color: aliceblue;margin: 10px;text-align: center;">{{ poem.content|safe  }}</p>
         {% endblock %}
+        </div>
     </body>
 
 </html>

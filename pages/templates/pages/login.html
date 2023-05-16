@@ -4,12 +4,14 @@
       <title>{{ poem.title }}</title>
   </head>
   <body>
+    <div style="margin-left: 30em;width: 800px;">
     <h2>Login</h2>
     <form method="post">
       {% csrf_token %}
       {{ form.as_p }}
       <button type="submit">Login</button>
     </form>
+  </div>
   </body>
 
 </html>
